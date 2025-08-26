@@ -1,5 +1,5 @@
 
-# 1) Commands (ready to paste in your README)
+# 1) Commands 
 
 ```sh
 # --- Prereqs (Linux/amd64) ---
