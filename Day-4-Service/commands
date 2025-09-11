@@ -1,0 +1,31 @@
+    2     chmod +x ./kubectl
+    3     mv ./kubectl /usr/local/bin 
+    4     kubectl version --short --client
+    5  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    6     sudo mv /tmp/eksctl /usr/local/bin
+    7     eksctl version
+    8   eksctl create cluster --name jaideep  
+    9     --region region-name    --node-type instance-type \ 
+   10  eksctl create cluster --name jaideep --region us-east-1 node-type t2.small 
+   11  eksctl create cluster --name jaideep --region us-east-1 --node-type t2.small 
+   12  eksctl get pods
+   13  kubectl get pods
+   14  vi deployement.yml
+   15  kubectl apply -f deployement.yml 
+   16  kubectl get pods
+   17  kubectl get pods -o wide
+   18  nodeport.yml
+   19  vi nodeport.yml
+   20  kubectl apply -f nodeport.yml
+   21  vi deployement.yml 
+   22  kubectl get pods
+   23  kubectl delete pods
+   24  kubectl apply -f nodeport.yml
+   25  kubectl apply -f deployement.yml 
+   26  kubectl getpods
+   27  kubectl get pods
+   28  kubectl get pods -o wide
+   29  kubectl delete pods nginx-deployment
+   30  kubectl delete pod -l app=nginx
+   31  kubectl get pods
+   32  kubectl delete deployment nginx-deployement
