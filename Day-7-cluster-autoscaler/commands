@@ -1,0 +1,43 @@
+    1    curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+    2     chmod +x ./kubectl
+    3     mv ./kubectl /usr/local/bin 
+    4     kubectl version --short --client
+    5     curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    6     sudo mv /tmp/eksctl /usr/local/bin
+    7     eksctl version
+    8  eksctl create cluster --name jaideep --region us-east-1 --node-type t2.medium
+    9  vi dep.yml
+   10  kubectl apply -f dep.yml
+   11  kubectl get pods
+   12  kubectl get deploy
+   13  kubectl scale deployment nginx-deployment --replicas=100
+   14  kubectl get pods
+   15  kubectl top nodes
+   16  kubectl get deploy
+   17  kubectl describe pod nginx-deployment-7df7bb5644-zs8gn
+   18  kubectl scale deployment nginx-deployment --replicas=2
+   19  kubectl get pods
+   20  kubectl apply -f https://raw.githubusercontent.com/kubernetes/autoscaler/cluster-autoscaler-1.29.0/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+   21  kubectl -n kube-system get pods -l app=cluster-autoscaler
+   22  kubectl apply -f https://raw.githubusercontent.com/kubernetes/autoscaler/cluster-autoscaler-1.29.0/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+   23  kubectl -n kube-system get pods -l app=cluster-autoscaler
+   24  kubectl delete -f https://raw.githubusercontent.com/kubernetes/autoscaler/cluster-autoscaler-1.29.0/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+   25  kubectl -n kube-system get pods -l app=cluster-autoscaler
+   26  kubectl apply -f https://raw.githubusercontent.com/kubernetes/autoscaler/cluster-autoscaler-1.29.0/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+   27  kubectl -n kube-system get pods -l app=cluster-autoscaler
+   28  kubectl -n kube-system edit deployment.apps/cluster-autoscaler
+   29  aws eks update-nodegroup-config   --cluster-name jaideep   --nodegroup-name ng-7ca8a93d   --scaling-config minSize=2,maxSize=6,desiredSize=3
+   30  kubectl get deploy
+   31  kubectl scale deployment nginx-deployment --replicas=50
+   32  kubectl get nodes
+   33  kubectl get pods
+   34  kubectl scale deployment nginx-deployment --replicas=75
+   35  kubectl delete -f https://raw.githubusercontent.com/kubernetes/autoscaler/cluster-autoscaler-1.29.0/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+   36  kubectl get nodes
+   37  kubectl scale deployment nginx-deployment --replicas=2
+   38  kubectl get nodes
+   39  kubectl get pods
+   40  kubectl create namespace argocd
+   41  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+   42  kubectl edit svc argocd-server -n argocd
+   43  history
