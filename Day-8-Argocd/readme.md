@@ -1,6 +1,3 @@
-Here’s a complete **`README.md`** you can use as documentation for ArgoCD, with both the overview and all commands included. I’ve structured it so that it’s professional, beginner-friendly, and fully copy-paste runnable.
-
----
 
 ````markdown
 # 🚀 ArgoCD Overview & Practical Example
