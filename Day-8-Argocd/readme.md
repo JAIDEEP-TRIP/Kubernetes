@@ -171,6 +171,8 @@ spec:
 
 ### 2. ArgoCD Application Manifest
 
+```yaml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
